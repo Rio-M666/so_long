@@ -6,25 +6,31 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:09:20 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 11:27:36 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/12 14:55:40 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	komozi(void)
+void	ft_print_alphabet(void)
 {
 	char	a;
 
 	a = 'a';
 	while (a <= 'z')
 	{
-		ft_print_alphabet(a);
+		ft_putchar(a);
 		a++;
 	}
 }
+
+// int	main(void)
+// {
+// 	ft_print_alphabet();
+// 	return (0);
+// }

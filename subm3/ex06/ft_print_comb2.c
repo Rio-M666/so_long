@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:44:02 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 11:18:33 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/12 14:47:53 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_print_comb2(void)
 			ft_putnbr(b);
 			if (a == 98 && b == 99)
 			{
-				ft_putchar(' ');
+				break ;
 			}
 			else
 			{
@@ -51,3 +51,9 @@ void	ft_print_comb2(void)
 		a++;
 	}
 }
+
+// // int	main(void)
+// {
+// 	ft_print_comb2();
+// 	return (0);
+// }

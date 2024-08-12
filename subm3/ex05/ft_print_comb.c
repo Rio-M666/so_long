@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 12:29:49 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 11:26:06 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/12 14:57:23 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_print_comb(void)
 				ft_putchar(a, b, c);
 				if (a == '7' && b == '8' && c == '9')
 				{
-					write(1, " ", 1);
+					break ;
 				}
 				write(1, ", ", 2);
 				c++;
@@ -47,3 +47,9 @@ void	ft_print_comb(void)
 		a++;
 	}
 }
+
+// // int	main(void)
+// {
+// 	ft_print_comb();
+// 	return (0);
+// }

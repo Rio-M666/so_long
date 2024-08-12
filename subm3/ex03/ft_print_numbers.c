@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 12:01:27 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 11:25:24 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/12 15:02:42 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,15 @@ void	ft_print_numbers(void)
 	char	kazu;
 
 	kazu = '0';
-	while (kazu < '9')
+	while (kazu <= '9')
 	{
 		ft_putchar(kazu);
 		kazu++;
 	}
 }
+
+// // int	main(void)
+// {
+// 	ft_print_numbers();
+// 	return (0);
+// }
