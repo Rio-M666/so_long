@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 16:10:56 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 18:08:10 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/13 14:10:14 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	ft_putstr(char *str)
 // int	main(void)
 // {
 // 	ft_putstr("abc");
+// 	ft_putstr("\n");
+// 	ft_putstr("Hello, World!");
 // 	return (0);
 // }

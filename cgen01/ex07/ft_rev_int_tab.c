@@ -6,10 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 18:44:38 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 20:06:44 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/13 13:56:37 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include <stdio.h>
 #include <unistd.h>
 
 void	ft_swap(int *a, int *b);
@@ -21,7 +22,7 @@ void	ft_rev_int_tab(int *tab, int size)
 
 	i = 0;
 	j = size - 1;
-	while (i < j - 1)
+	while (i < j)
 	{
 		ft_swap(&tab[i], &tab[j]);
 		i++;
@@ -38,14 +39,20 @@ void	ft_swap(int *a, int *b)
 	*b = temp;
 }
 
-int	main(void)
-{
-	int	c[5];
+// int	main(void)
+// {
+// 	int	c[5];
 
-	c[0] = 1;
-	c[1] = 10;
-	c[2] = 20;
-	c[3] = 30;
-	c[4] = 40;
-	ft_rev_int_tab(c, 5);
-}
+// 	c[0] = 1;
+// 	c[1] = 10;
+// 	c[2] = 20;
+// 	c[3] = 30;
+// 	c[4] = 40;
+// 	ft_rev_int_tab(c, 5);
+// 	for (int i = 0; i < 5; i++)
+// 	{
+// 		printf("%d ", c[i]);
+// 	}
+// 	printf("\n");
+// 	return (0);
+// }

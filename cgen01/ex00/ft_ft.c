@@ -6,13 +6,24 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:00:23 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/12 12:16:25 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/13 14:48:58 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>
 #include <unistd.h>
 
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+
+// int	main(void)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	ft_ft(&i);
+// 	printf("%d\n", i);
+// 	return (0);
+// }
