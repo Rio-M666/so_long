@@ -6,16 +6,12 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 20:08:10 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/13 14:50:14 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/13 15:03:15 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <stdio.h>
 #include <unistd.h>
-
-// void	ft_putchar(char c)
-// {
-// 	write(1, &c, 1);
-// }
 
 void	ft_swap(int *a, int *b)
 {
@@ -61,9 +57,7 @@ void	ft_sort_int_tab(int *tab, int size)
 // 	j = 0;
 // 	while (j < 5)
 // 	{
-// 		ft_putchar('0' + i[j] / 10);
-// 		ft_putchar('0' + i[j] % 10);
-// 		ft_putchar('\n');
+// 		printf("%d\n", i[j]);
 // 		j++;
 // 	}
 // }
