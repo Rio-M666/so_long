@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 21:33:11 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 15:14:58 by mrio             ###   ########.fr       */
+/*   Created: 2024/08/13 21:26:51 by mrio              #+#    #+#             */
+/*   Updated: 2024/08/14 10:44:52 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 int	ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
-		if (32 <= *str && *str <= 126)
+		if (97 <= *str && *str <= 122)
 		{
 			str++;
 		}
@@ -32,7 +32,7 @@ int	ft_str_is_numeric(char *str)
 // {
 // 	char *a;
 // 	int result;
-// 	a = "em";
+// 	a = "jovs";
 // 	ft_str_is_numeric(a);
 // 	result = ft_str_is_numeric(a);
 // 	printf("%d", result);

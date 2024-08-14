@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 13:16:33 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/13 21:17:09 by mrio             ###   ########.fr       */
+/*   Created: 2024/08/14 10:50:10 by mrio              #+#    #+#             */
+/*   Updated: 2024/08/14 13:33:33 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
-#include <unistd.h>
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
@@ -33,9 +32,9 @@ int	ft_str_is_alpha(char *str)
 // {
 // 	char *a;
 // 	int result;
-// 	a = "pihfieguv";
-// 	ft_str_is_alpha(a);
-// 	result = ft_str_is_alpha(a);
+// 	a = "jozgbnvs";
+// 	ft_str_is_numeric(a);
+// 	result = ft_str_is_numeric(a);
 // 	printf("%d", result);
 // 	return (0);
 // }

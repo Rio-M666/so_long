@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 21:33:11 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 15:14:58 by mrio             ###   ########.fr       */
+/*   Created: 2024/08/13 11:47:08 by mrio              #+#    #+#             */
+/*   Updated: 2024/08/14 10:40:52 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-	while (*str != '\0')
+	char	*tmp;
+
+	tmp = dest;
+	while (*src != '\0')
 	{
-		if (32 <= *str && *str <= 126)
-		{
-			str++;
-		}
-		else
-		{
-			return (0);
-		}
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	return (1);
+	*dest = '\0';
+	return (tmp);
 }
 
 // int	main(void)
 // {
-// 	char *a;
-// 	int result;
-// 	a = "em";
-// 	ft_str_is_numeric(a);
-// 	result = ft_str_is_numeric(a);
-// 	printf("%d", result);
+// 	char src[] = "Hello, World";
+// 	char dest[50];
+// 	ft_strcpy(dest, src);
+// 	printf("%s\n", dest);
 // 	return (0);
 // }

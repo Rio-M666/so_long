@@ -6,17 +6,17 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 21:33:11 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 15:14:58 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/14 10:44:49 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 int	ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
-		if (32 <= *str && *str <= 126)
+		if (0 <= *str && *str <= 31 || *str == 127)
 		{
 			str++;
 		}

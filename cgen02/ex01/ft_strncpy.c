@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 12:23:15 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 10:35:09 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/14 15:11:20 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (tmp);
 }
 
-int	main(void)
-{
-	char	dest[10];
+// int	main(void)
+// {
+// 	char	dest[10];
 
-	ft_strncpy(dest, "Hello world", 2);
-	printf("%s\n", dest);
-}
+// 	ft_strncpy(dest, "Hello world", 2);
+// 	printf("%s\n", dest);
+// }

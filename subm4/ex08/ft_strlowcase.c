@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 21:33:11 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 15:14:58 by mrio             ###   ########.fr       */
+/*   Created: 2024/08/13 23:04:14 by mrio              #+#    #+#             */
+/*   Updated: 2024/08/14 10:54:36 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strupcase(char *str)
 {
+	char	*c;
+
+	c = str;
 	while (*str != '\0')
 	{
-		if (32 <= *str && *str <= 126)
+		if (65 <= *str && *str <= 90)
 		{
-			str++;
+			*str += 32;
 		}
-		else
-		{
-			return (0);
-		}
+		str++;
 	}
-	return (1);
+	return (c);
 }
 
 // int	main(void)
 // {
-// 	char *a;
-// 	int result;
-// 	a = "em";
-// 	ft_str_is_numeric(a);
-// 	result = ft_str_is_numeric(a);
-// 	printf("%d", result);
+// 	char str[] = "HELLO WORLD!";
+// 	printf("%s\n", ft_strupcase(str));
 // 	return (0);
 // }
