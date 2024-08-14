@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 23:04:14 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/13 23:06:14 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/14 10:41:09 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 char	*ft_strupcase(char *str)
 {
@@ -28,9 +28,9 @@ char	*ft_strupcase(char *str)
 	return (c);
 }
 
-int	main(void)
-{
-	char str[] = "HELLO WORLD!";
-	printf("%s\n", ft_strupcase(str));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[] = "HELLO WORLD!";
+// 	printf("%s\n", ft_strupcase(str));
+// 	return (0);
+// }

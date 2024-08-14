@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 11:47:08 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/13 12:14:23 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/14 10:40:52 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = dest;
 	while (*src != '\0')
@@ -26,3 +26,12 @@ char	*ft_strcpy(char *dest, char *src)
 	*dest = '\0';
 	return (tmp);
 }
+
+// int	main(void)
+// {
+// 	char src[] = "Hello, World";
+// 	char dest[50];
+// 	ft_strcpy(dest, src);
+// 	printf("%s\n", dest);
+// 	return (0);
+// }

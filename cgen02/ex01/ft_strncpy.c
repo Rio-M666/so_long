@@ -6,17 +6,16 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 12:23:15 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/13 15:35:30 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/14 10:35:09 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
-
-	char *tmp;
+	unsigned int	i;
+	char			*tmp;
 
 	i = 0;
 	tmp = dest;
@@ -34,4 +33,12 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		i++;
 	}
 	return (tmp);
+}
+
+int	main(void)
+{
+	char	dest[10];
+
+	ft_strncpy(dest, "Hello world", 2);
+	printf("%s\n", dest);
 }
