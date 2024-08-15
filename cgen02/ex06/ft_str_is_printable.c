@@ -6,13 +6,13 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 21:33:11 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 15:14:58 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/15 09:55:03 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (*str != '\0')
 	{
@@ -32,9 +32,8 @@ int	ft_str_is_numeric(char *str)
 // {
 // 	char *a;
 // 	int result;
-// 	a = "em";
-// 	ft_str_is_numeric(a);
-// 	result = ft_str_is_numeric(a);
+// 	a = "ep\n";
+// 	result = ft_str_is_printable(a);
 // 	printf("%d", result);
 // 	return (0);
 // }

@@ -6,13 +6,13 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:50:10 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/14 13:33:33 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/15 09:27:25 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-int	ft_str_is_numeric(char *str)
+int	ft_str_is_alpha(char *str)
 {
 	while (*str != '\0')
 	{
@@ -33,8 +33,8 @@ int	ft_str_is_numeric(char *str)
 // 	char *a;
 // 	int result;
 // 	a = "jozgbnvs";
-// 	ft_str_is_numeric(a);
-// 	result = ft_str_is_numeric(a);
+// 	ft_str_is_alpha(a);
+// 	result = ft_str_is_alpha(a);
 // 	printf("%d", result);
 // 	return (0);
 // }
