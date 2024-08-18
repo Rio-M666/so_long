@@ -6,11 +6,9 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:40:03 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/15 17:41:14 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/18 16:14:37 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
@@ -33,6 +31,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char a[] = "ABC";

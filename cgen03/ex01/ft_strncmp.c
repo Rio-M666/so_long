@@ -6,11 +6,9 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:26:05 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/15 11:51:42 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/18 16:10:39 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
@@ -28,6 +26,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char a[] = "ABC";

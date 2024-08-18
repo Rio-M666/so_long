@@ -6,11 +6,9 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:00:09 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/15 11:52:20 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/18 16:09:27 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -38,6 +36,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char a[] = "BBBB";
