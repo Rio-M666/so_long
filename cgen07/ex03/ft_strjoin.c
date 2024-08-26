@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 11:59:55 by mrio              #+#    #+#             */
-/*   Updated: 2024/08/26 14:16:49 by mrio             ###   ########.fr       */
+/*   Updated: 2024/08/26 17:28:29 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_strlen(char *c)
 {
 	int	i;
 
+	i = 0;
 	while (c[i])
 		i++;
 	return (i);
@@ -105,7 +106,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 // 	sep1 = ":";
 // 	result1 = ft_strjoin(4, strs1, sep1);
-// 	printf("Result 1: %s\n", result1);
+// 	printf("%s\n", result1);
 // 	free(result1);
 // 	return (0);
 // }
