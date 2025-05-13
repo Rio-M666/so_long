@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 11:51:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 16:27:52 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 17:32:26 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ size_t	ft_putnbr(int c);
 size_t	ft_putnbr_u(unsigned int c);
 size_t	ft_pointer(void *ptr);
 size_t	ft_puthex(unsigned long i, const char str);
+int		ft_check(va_list ap, char str);
 
 #endif
