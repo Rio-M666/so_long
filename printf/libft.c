@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 16:50:16 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 16:33:53 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 16:59:25 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_putchr(char c)
 
 size_t	ft_putstr(char *str)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	if (str == NULL)
@@ -34,7 +34,7 @@ size_t	ft_putstr(char *str)
 
 size_t	ft_putnbr(int c)
 {
-	int		len;
+	size_t	len;
 	long	num;
 
 	num = c;
@@ -52,7 +52,7 @@ size_t	ft_putnbr(int c)
 
 size_t	ft_putnbr_u(unsigned int c)
 {
-	int		len;
+	size_t	len;
 	long	num;
 
 	len = 0;

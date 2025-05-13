@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:48:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 16:27:51 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 16:59:20 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_puthex(unsigned long i, const char str)
 {
 	char	*hex;
-	int		len;
+	size_t	len;
 
 	len = 0;
 	if (str == 'x')
@@ -30,7 +30,7 @@ size_t	ft_puthex(unsigned long i, const char str)
 
 size_t	ft_pointer(void *ptr)
 {
-	int			len;
+	size_t		len;
 	uintptr_t	num;
 
 	len = 0;

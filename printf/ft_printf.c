@@ -6,13 +6,13 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:26:24 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 16:27:48 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 17:24:46 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_check(va_list ap, char str)
+int	ft_check(va_list ap, char str)
 {
 	size_t	len;
 
@@ -31,28 +31,35 @@ size_t	ft_check(va_list ap, char str)
 		return (ft_puthex(va_arg(ap, unsigned int), str));
 	else if (str == '%')
 		return (ft_putchr('%'));
+	else if (str == '\0')
+		return (-1);
 	return (len);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	size_t	i;
 	size_t	len;
 	va_list	ap;
+	int		result;
 
 	va_start(ap, str);
-	i = 0;
 	len = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (str[i] != '%')
-			len += ft_putchr(str[i]);
+		if (*str != '%')
+			len += ft_putchr(*str);
 		else
 		{
-			i++;
-			len += ft_check(ap, str[i]);
+			str++;
+			result = ft_check(ap, *str);
+			if (result == -1)
+			{
+				va_end(ap);
+				return (-1);
+			}
+			len += result;
 		}
-		i++;
+		str++;
 	}
 	va_end(ap);
 	return (len);
@@ -60,27 +67,14 @@ int	ft_printf(const char *str, ...)
 
 // int	main(void)
 // {
-// 	// char *str = "27389";
-// 	// long i=12389789;
+// 	int	i;
+// 	int	j;
 
-// 	// ft_printf("%",fcvt);
-// 	int i;
-// 	int j;
 // 	i = 0;
 // 	j = 0;
 // 	i = printf("%", fcvt);
 // 	j = ft_printf("%", fcvt);
 // 	printf("iはこれ%d\n", i);
 // 	printf("jはこれ%d\n", j);
-// 	return (0);
-// }
-// #include <limits.h>
-
-// int	main(void)
-// {
-// 	printf(" %p %p ", LONG_MIN, LONG_MAX);
-// 	ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
-// 	// printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
-// 	// printf(" %p %p ", 0, 0);
 // 	return (0);
 // }
