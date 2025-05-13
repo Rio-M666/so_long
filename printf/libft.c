@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyachirio <miyachirio@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 16:50:16 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/11 02:32:16 by miyachirio       ###   ########.fr       */
+/*   Updated: 2025/05/13 15:55:57 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 size_t	ft_putchr(char c)
 {
@@ -32,5 +32,31 @@ size_t	ft_putstr(char *str)
 
 size_t	ft_putnbr(int c)
 {
-	long num;
+	int		len;
+	long	num;
+
+	num = c;
+	len = 0;
+	if (num < 0)
+	{
+		len += ft_putchr('-');
+		num = -num;
+	}
+	if (num >= 10)
+		len += ft_putnbr(num / 10);
+	len += ft_putchr((num % 10) + '0');
+	return (len);
+}
+
+size_t	ft_putnbr_u(unsigned int c)
+{
+	int		len;
+	long	num;
+
+	len = 0;
+	num = c;
+	if (num >= 10)
+		len += ft_putnbr(num / 10);
+	len += ft_putchr((num % 10) + '0');
+	return (len);
 }
