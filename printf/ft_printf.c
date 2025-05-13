@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:26:24 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 15:55:45 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 16:27:48 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,21 @@ int	ft_printf(const char *str, ...)
 // 	// ft_printf("%",fcvt);
 // 	int i;
 // 	int j;
-// 	i=0;
-// 	j=0;
-// 	i=printf("%",fcvt);
-// 	j=ft_printf("%",fcvt);
-// 	printf("%d",i);
-// 	printf("%d",j);
+// 	i = 0;
+// 	j = 0;
+// 	i = printf("%", fcvt);
+// 	j = ft_printf("%", fcvt);
+// 	printf("iはこれ%d\n", i);
+// 	printf("jはこれ%d\n", j);
+// 	return (0);
+// }
+// #include <limits.h>
+
+// int	main(void)
+// {
+// 	printf(" %p %p ", LONG_MIN, LONG_MAX);
+// 	ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+// 	// printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+// 	// printf(" %p %p ", 0, 0);
 // 	return (0);
 // }

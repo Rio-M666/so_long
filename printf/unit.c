@@ -6,13 +6,13 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:48:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/13 15:56:06 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/13 16:27:51 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_puthex(unsigned int i, const char str)
+size_t	ft_puthex(unsigned long i, const char str)
 {
 	char	*hex;
 	int		len;
@@ -35,13 +35,9 @@ size_t	ft_pointer(void *ptr)
 
 	len = 0;
 	if (ptr == NULL)
-	{
-		ft_putstr("nil");
-		return (-1);
-	}
+		return (ft_putstr("(nil)"));
 	num = (uintptr_t)ptr;
 	len += write(1, "0x", 2);
-	if (num > 16)
-		len += ft_puthex(num, 'x');
+	len += ft_puthex(num, 'x');
 	return (len);
 }
