@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:37:56 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/15 16:37:16 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/29 16:42:41 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+char	*ft_strchr(const char *str, int c);
+char	*ft_strdup(const char *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *str);
 #endif
