@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:37:54 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/29 17:02:08 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/29 17:07:28 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*tmp;
 
-	if (fd < 0 || BUFFER_SIZE < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!save)
 		save = ft_strdup("");
-	while (!(pos = strchr(save, '\n')))
+	while (!(pos = ft_strchr(save, '\n')))
 	{
 		buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!buff)
