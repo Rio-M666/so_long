@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:37:54 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/30 02:03:04 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/30 02:07:27 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	read_and_append(int fd, char **save)
 		return (-1);
 	bytes = read(fd, buff, BUFFER_SIZE);
 	if (bytes == -1)
-		return (free(buff), free(*save), *save = NULL, -1);
+		return (free(buff), -1);
 	if (bytes == 0)
 		return (free(buff), 0);
 	buff[bytes] = '\0';
@@ -97,7 +97,11 @@ char	*get_next_line(int fd)
 	{
 		result = read_and_append(fd, &save);
 		if (result == -1)
+		{
+			free(save);
+			save = NULL;
 			return (NULL);
+		}
 		if (result == 0)
 			return (handle_eof(&save));
 		pos = ft_strchr(save, '\n');
