@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_units.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 17:37:51 by mrio              #+#    #+#             */
-/*   Updated: 2025/05/29 16:36:50 by mrio             ###   ########.fr       */
+/*   Updated: 2025/05/30 01:24:24 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+
 char	*ft_strchr(const char *str, int c)
 {
 	size_t			i;
@@ -72,10 +73,10 @@ char	*ft_strdup(const char *s)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
-	size_t j;
-	size_t k;
-	char *str;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*str;
 
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
