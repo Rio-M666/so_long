@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:37:17 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 13:50:21 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/05 14:49:42 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	count_elements(t_game *game, int *player_count, int *collectible_count,
 		int *exit_count)

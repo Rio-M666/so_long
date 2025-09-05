@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:13:48 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 13:54:49 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/05 14:49:11 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 char	**read_map(char *filename)
 {
@@ -39,6 +39,7 @@ char	**read_map(char *filename)
 		line[len] = '\0';
 		map[i] = line;
 		i++;
+		line = get_next_line(fd);
 	}
 	map[i] = NULL;
 	close(fd);
@@ -60,9 +61,9 @@ char	**copy_map(t_game *game)
 	i = 0;
 	if (!copy)
 		return (NULL);
+	width = game->map_width + 1;
 	while (game->map[i])
 	{
-		width = game->map_width + 1;
 		copy[i] = malloc(sizeof(char) * width);
 		if (!copy[i])
 		{
