@@ -1,13 +1,13 @@
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=42
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=42 -I.
 
 MLX_PATH = ./minilibx-linux
 MLX_FLAGS = -L$(MLX_PATH) -lmlx -lXext -lX11 -lm -lz
 MLX_INCLUDES = -I$(MLX_PATH)
 
-SRCS = main.c get_next_line.c get_next_line_utils.c
+SRCS = src/main.c gnl/get_next_line.c gnl/get_next_line_utils.c src/check.c src/check2.c src/game.c src/image.c src/map.c src/key.c
 OBJS = $(SRCS:.c=.o)
 
 all: mlx_make $(NAME)

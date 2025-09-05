@@ -8,7 +8,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define TILE_SIZE 64
+# define TILE_SIZE 32
 
 # define WINDOW_TITLE "SO_LONG"
 
@@ -51,4 +51,30 @@ typedef struct s_game
 
 }			t_game;
 
+int			check_filename(char *filename);
+int			check_square(t_game *game);
+int			check_wall(t_game *game);
+int			check_character(t_game *game);
+int			check_path(t_game *game);
+int			count_elements(t_game *game, int *player_count,
+				int *collectible_count, int *exit_count);
+int			find_player_position(t_game *game, int *x, int *y);
+void		flood_fill(t_game *game, char **map_copy, int x, int y,
+				int *collectibles_found, int *exit_found);
+void		init_mlx(t_game *game);
+void		cleanup_game(t_game *game);
+void		init_game_data(t_game *game, char **map);
+int			check_move(t_game *game, int x, int y);
+void		move_player(t_game *game, int x, int y);
+int			handle_key(int keycode, t_game *game);
+int			handle_close(t_game *game);
+void		load_assets(t_game *game);
+void		render_tile(t_game *game, char tile, int x, int y);
+void		render_map(t_game *game);
+int			validate_map(t_game *game);
+char		**read_map(char *filename);
+char		**copy_map(t_game *game);
+void		free_map(char **map);
+int			map_width(char **map);
+int			map_height(char **map);
 #endif
