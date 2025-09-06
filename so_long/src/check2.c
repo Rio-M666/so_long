@@ -6,20 +6,21 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:37:17 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/06 16:18:05 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/07 06:13:27 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	count_elements(t_game *game, t_checkdata *data)
+t_element_count	count_elements(t_game *game)
 {
-	int	i;
-	int	j;
+	t_element_count	counts;
+	int				i;
+	int				j;
 
-	data->player_count = 0;
-	data->collectible_count = 0;
-	data->exit_count = 0;
+	counts.player_count = 0;
+	counts.collectible_count = 0;
+	counts.exit_count = 0;
 	i = 0;
 	while (game->map[i])
 	{
@@ -27,19 +28,19 @@ int	count_elements(t_game *game, t_checkdata *data)
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == PLAYER)
-				(data->player_count)++;
+				counts.player_count++;
 			else if (game->map[i][j] == COLLECTIBLE)
-				(data->collectible_count)++;
+				counts.collectible_count++;
 			else if (game->map[i][j] == EXIT)
-				(data->exit_count)++;
+				counts.exit_count++;
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (counts);
 }
 
-int	find_player_position(t_game *game, t_checkdata *data)
+int	find_player_position(t_game *game)
 {
 	int	i;
 	int	j;
@@ -52,8 +53,8 @@ int	find_player_position(t_game *game, t_checkdata *data)
 		{
 			if (game->map[i][j] == PLAYER)
 			{
-				data->x = j;
-				data->y = i;
+				game->player_x = j;
+				game->player_y = i;
 				return (1);
 			}
 			j++;
@@ -63,7 +64,7 @@ int	find_player_position(t_game *game, t_checkdata *data)
 	return (0);
 }
 
-void	flood_fill(char **map_copy, int x, int y, t_checkdata *data)
+void	flood_fill(char **map_copy, int x, int y, t_flood_data *data)
 {
 	int	width;
 	int	height;

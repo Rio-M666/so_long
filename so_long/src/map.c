@@ -6,11 +6,22 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:13:48 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/06 16:25:19 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/07 06:33:43 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+static char	*check_line(char *line)
+{
+	int	len;
+
+	len = 0;
+	while (line[len] && line[len] != '\n')
+		len++;
+	line[len] = '\0';
+	return (line);
+}
 
 char	**read_map(char *filename)
 {
@@ -18,26 +29,18 @@ char	**read_map(char *filename)
 	char	**map;
 	int		i;
 	char	*line;
-	int		len;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (NULL);
 	map = malloc(sizeof(char *) * 1001);
 	if (!map)
-	{
-		close(fd);
-		return (NULL);
-	}
+		return (close(fd), NULL);
 	i = 0;
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		len = 0;
-		while (line[len] && line[len] != '\n')
-			len++;
-		line[len] = '\0';
-		map[i] = line;
+		map[i] = check_line(line);
 		i++;
 		line = get_next_line(fd);
 	}
@@ -48,13 +51,30 @@ char	**read_map(char *filename)
 	return (map);
 }
 
+static char	*copy_line(char *original, int width)
+{
+	char	*line;
+	int		j;
+
+	line = malloc(sizeof(char) * width);
+	if (!line)
+		return (NULL);
+	j = 0;
+	while (original[j])
+	{
+		line[j] = original[j];
+		j++;
+	}
+	line[j] = '\0';
+	return (line);
+}
+
 char	**copy_map(t_game *game)
 {
 	char	**copy;
 	int		width;
 	int		height;
 	int		i;
-	int		j;
 
 	height = game->map_height;
 	copy = malloc(sizeof(char *) * (height + 1));
@@ -64,7 +84,7 @@ char	**copy_map(t_game *game)
 	i = 0;
 	while (game->map[i])
 	{
-		copy[i] = malloc(sizeof(char) * width);
+		copy[i] = copy_line(game->map[i], width);
 		if (!copy[i])
 		{
 			while (--i >= 0)
@@ -72,13 +92,6 @@ char	**copy_map(t_game *game)
 			free(copy);
 			return (NULL);
 		}
-		j = 0;
-		while (game->map[i][j])
-		{
-			copy[i][j] = game->map[i][j];
-			j++;
-		}
-		copy[i][j] = '\0';
 		i++;
 	}
 	copy[i] = NULL;
@@ -98,28 +111,4 @@ void	free_map(char **map)
 		i++;
 	}
 	free(map);
-}
-
-int	map_width(char **map)
-{
-	int	width;
-
-	if (!map || !map[0])
-		return (0);
-	width = 0;
-	while (map[0][width])
-		width++;
-	return (width);
-}
-
-int	map_height(char **map)
-{
-	int	height;
-
-	if (!map)
-		return (0);
-	height = 0;
-	while (map[height])
-		height++;
-	return (height);
 }

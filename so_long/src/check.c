@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:29:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/06 16:23:30 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/07 06:07:11 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,19 +108,19 @@ int	check_character(t_game *game)
 
 int	check_path(t_game *game)
 {
-	t_checkdata	data;
+	t_flood_data	flood_data;
+	char			**map_copy;
+	int				result;
 
-	data.collectibles_found = 0;
-	data.exit_found = 0;
-	data.total_colectibles = 0;
-	if (!find_player_position(game, &data))
+	flood_data.collectibles_found = 0;
+	flood_data.exit_found = 0;
+	flood_data.total_collectibles = game->collectibles_total;
+	map_copy = copy_map(game);
+	if (!map_copy)
 		return (0);
-	count_elements(game, &data);
-	data.map_copy = copy_map(game);
-	if (!data.map_copy)
-		return (0);
-	flood_fill(data.map_copy, data.player_x, data.player_y, &data);
-	free_map(data.map_copy);
-	return (data.collectibles_found == data.total_colectibles
-		&& data.exit_found == 1);
+	flood_fill(map_copy, game->player_x, game->player_y, &flood_data);
+	result = (flood_data.collectibles_found == flood_data.total_collectibles
+			&& flood_data.exit_found == 1);
+	free_map(map_copy);
+	return (result);
 }
