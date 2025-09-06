@@ -51,16 +51,30 @@ typedef struct s_game
 
 }			t_game;
 
+typedef struct s_checkdata
+{
+	int		collectibles_found;
+	int		exit_found;
+	int		total_colectibles;
+	int		player_x;
+	int		player_y;
+	char	**map_copy;
+	int		player_count;
+	int		exit_count;
+	int		collectible_count;
+	int		x;
+	int		y;
+}			t_checkdata;
+
 int			check_filename(char *filename);
 int			check_square(t_game *game);
 int			check_wall(t_game *game);
 int			check_character(t_game *game);
 int			check_path(t_game *game);
-int			count_elements(t_game *game, int *player_count,
-				int *collectible_count, int *exit_count);
-int			find_player_position(t_game *game, int *x, int *y);
-void		flood_fill(t_game *game, char **map_copy, int x, int y,
-				int *collectibles_found, int *exit_found);
+int			count_elements(t_game *game, t_checkdata *data);
+int			find_player_position(t_game *game, t_checkdata *data);
+void		flood_fill(char **map_copy, int x, int y, t_checkdata *data);
+
 void		init_mlx(t_game *game);
 void		cleanup_game(t_game *game);
 void		init_game_data(t_game *game, char **map);
