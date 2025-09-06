@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:13:48 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 14:49:11 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/06 16:25:19 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ char	**copy_map(t_game *game)
 
 	height = game->map_height;
 	copy = malloc(sizeof(char *) * (height + 1));
-	i = 0;
 	if (!copy)
 		return (NULL);
 	width = game->map_width + 1;
+	i = 0;
 	while (game->map[i])
 	{
 		copy[i] = malloc(sizeof(char) * width);

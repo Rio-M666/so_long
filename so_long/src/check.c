@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:29:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 14:33:17 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/06 16:23:30 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,26 +108,19 @@ int	check_character(t_game *game)
 
 int	check_path(t_game *game)
 {
-	int		collectibles_found;
-	int		exit_found;
-	int		total_colectibles;
-	int		player_x;
-	int		player_y;
-	char	**map_copy;
-	int		player_count;
-	int		exit_count;
+	t_checkdata	data;
 
-	collectibles_found = 0;
-	exit_found = 0;
-	total_colectibles = 0;
-	if (!find_player_position(game, &player_x, &player_y))
+	data.collectibles_found = 0;
+	data.exit_found = 0;
+	data.total_colectibles = 0;
+	if (!find_player_position(game, &data))
 		return (0);
-	count_elements(game, &player_count, &total_colectibles, &exit_count);
-	map_copy = copy_map(game);
-	if (!map_copy)
+	count_elements(game, &data);
+	data.map_copy = copy_map(game);
+	if (!data.map_copy)
 		return (0);
-	flood_fill(game, map_copy, player_x, player_y, &collectibles_found,
-		&exit_found);
-	free_map(map_copy);
-	return (collectibles_found == total_colectibles && exit_found == 1);
+	flood_fill(data.map_copy, data.player_x, data.player_y, &data);
+	free_map(data.map_copy);
+	return (data.collectibles_found == data.total_colectibles
+		&& data.exit_found == 1);
 }

@@ -6,21 +6,20 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:37:17 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 14:49:42 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/06 16:18:05 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	count_elements(t_game *game, int *player_count, int *collectible_count,
-		int *exit_count)
+int	count_elements(t_game *game, t_checkdata *data)
 {
 	int	i;
 	int	j;
 
-	*player_count = 0;
-	*collectible_count = 0;
-	*exit_count = 0;
+	data->player_count = 0;
+	data->collectible_count = 0;
+	data->exit_count = 0;
 	i = 0;
 	while (game->map[i])
 	{
@@ -28,11 +27,11 @@ int	count_elements(t_game *game, int *player_count, int *collectible_count,
 		while (game->map[i][j])
 		{
 			if (game->map[i][j] == PLAYER)
-				(*player_count)++;
+				(data->player_count)++;
 			else if (game->map[i][j] == COLLECTIBLE)
-				(*collectible_count)++;
+				(data->collectible_count)++;
 			else if (game->map[i][j] == EXIT)
-				(*exit_count)++;
+				(data->exit_count)++;
 			j++;
 		}
 		i++;
@@ -40,7 +39,7 @@ int	count_elements(t_game *game, int *player_count, int *collectible_count,
 	return (1);
 }
 
-int	find_player_position(t_game *game, int *x, int *y)
+int	find_player_position(t_game *game, t_checkdata *data)
 {
 	int	i;
 	int	j;
@@ -53,8 +52,8 @@ int	find_player_position(t_game *game, int *x, int *y)
 		{
 			if (game->map[i][j] == PLAYER)
 			{
-				*x = j;
-				*y = i;
+				data->x = j;
+				data->y = i;
 				return (1);
 			}
 			j++;
@@ -64,25 +63,24 @@ int	find_player_position(t_game *game, int *x, int *y)
 	return (0);
 }
 
-void	flood_fill(t_game *game, char **map_copy, int x, int y,
-		int *collectibles_found, int *exit_found)
+void	flood_fill(char **map_copy, int x, int y, t_checkdata *data)
 {
 	int	width;
 	int	height;
 
-	width = game->map_width;
-	height = game->map_height;
+	width = map_width(map_copy);
+	height = map_height(map_copy);
 	if (x < 0 || x >= width || y < 0 || y >= height)
 		return ;
 	if (map_copy[y][x] == WALL || map_copy[y][x] == 'F')
 		return ;
 	if (map_copy[y][x] == COLLECTIBLE)
-		(*collectibles_found)++;
+		data->collectibles_found++;
 	else if (map_copy[y][x] == EXIT)
-		(*exit_found) = 1;
+		data->exit_found = 1;
 	map_copy[y][x] = 'F';
-	flood_fill(game, map_copy, x + 1, y, collectibles_found, exit_found);
-	flood_fill(game, map_copy, x - 1, y, collectibles_found, exit_found);
-	flood_fill(game, map_copy, x, y + 1, collectibles_found, exit_found);
-	flood_fill(game, map_copy, x, y - 1, collectibles_found, exit_found);
+	flood_fill(map_copy, x + 1, y, data);
+	flood_fill(map_copy, x - 1, y, data);
+	flood_fill(map_copy, x, y + 1, data);
+	flood_fill(map_copy, x, y - 1, data);
 }
