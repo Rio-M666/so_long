@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 01:33:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 11:46:01 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/08 13:51:48 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,25 @@ int	validate_map(t_game *game)
 	t_element_count	counts;
 
 	if (!game->map)
-		return (ft_printf("Error\n"), 0);
+		return (ft_printf("Error\nMap is empty or invalid\n"), 0);
 	if (!check_square(game))
-		return (ft_printf("square miss"), 0);
+		return (ft_printf("Error\nMap must be rectangular\n"), 0);
 	if (!check_wall(game))
-		return (ft_printf("wall miss"), 0);
+		return (ft_printf("Error\nMap must be surrounded by walls\n"), 0);
 	if (!check_character(game))
-		return (ft_printf("character miss"), 0);
+		return (ft_printf("Error\nMap contains invalid characters\n"), 0);
 	counts = count_elements(game);
 	if (counts.player_count != 1)
-		return (ft_printf("player miss\n"), 0);
+		return (ft_printf("Error\nMap must contain exactly one player (P)\n"),
+			0);
 	if (counts.exit_count != 1)
-		return (ft_printf("exit miss"), 0);
+		return (ft_printf("Error\nMap must contai exactly one ecit (E)\n"), 0);
 	if (counts.collectible_count < 1)
-		return (ft_printf("collectible miss"), 0);
+		return (ft_printf("Error\nMap must contain at least one collectible(C)\n"),
+			0);
 	if (!check_path(game))
-		return (ft_printf("path miss"), 0);
+		return (ft_printf("Error\nNo valid path to collect all items and reach exit\n"),
+			0);
 	return (1);
 }
 

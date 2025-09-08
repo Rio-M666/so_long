@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:29:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 06:57:45 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/08 13:38:47 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@ int	check_filename(char *filename)
 	int	len;
 
 	if (!filename)
-		return (ft_printf("filename is NULL\n"), 0);
+		return (ft_printf("Error\nfilename is NULL\n"), 0);
 	len = 0;
 	while (filename[len])
 		len++;
 	if (len < 4)
-		return (ft_printf("file name isn't correct\n"), 0);
+		return (ft_printf("Error\nfile name isn't correct\n"), 0);
 	if (filename[len - 4] != '.' || filename[len - 3] != 'b' || filename[len
 		- 2] != 'e' || filename[len - 1] != 'r')
 	{
-		return (ft_printf("file name isn't correct\n"), 0);
+		return (ft_printf("Error\nfile name isn't correct\n"), 0);
 	}
-	ft_printf("File's lastname is correct!!!!\n");
 	return (1);
 }
 
@@ -48,11 +47,7 @@ int	check_square(t_game *game)
 		while (game->map[i][current_width])
 			current_width++;
 		if (current_width != width)
-		{
-			ft_printf("❌ square error at line %d: expected %d, got %d |%s|\n", i,
-				width, current_width, game->map[i]);
 			return (0);
-		}
 		i++;
 	}
 	return (1);

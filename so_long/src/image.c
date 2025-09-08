@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:35:07 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 14:49:27 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/08 13:46:42 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	load_assets(t_game *game)
 	int	h;
 
 	game->img_collectible = mlx_xpm_file_to_image(game->mlx,
-			"assets/collectible.xpm", &w, &h);
-	game->img_wall = mlx_xpm_file_to_image(game->mlx, "assets/wall.xpm", &w,
+			"textures/collectible.xpm", &w, &h);
+	game->img_wall = mlx_xpm_file_to_image(game->mlx, "textures/wall.xpm", &w,
 			&h);
-	game->img_player = mlx_xpm_file_to_image(game->mlx, "assets/player.xpm", &w,
-			&h);
-	game->img_exit = mlx_xpm_file_to_image(game->mlx, "assets/exit.xpm", &w,
+	game->img_player = mlx_xpm_file_to_image(game->mlx, "textures/player.xpm",
+			&w, &h);
+	game->img_exit = mlx_xpm_file_to_image(game->mlx, "textures/exit.xpm", &w,
 			&h);
 }
 
