@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 01:33:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 06:38:01 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/07 11:46:01 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,22 @@ int	validate_map(t_game *game)
 	t_element_count	counts;
 
 	if (!game->map)
-		return (printf("game->map miss"), 0);
+		return (ft_printf("Error\n"), 0);
 	if (!check_square(game))
-		return (printf("square miss"), 0);
+		return (ft_printf("square miss"), 0);
 	if (!check_wall(game))
-		return (printf("wall miss"), 0);
+		return (ft_printf("wall miss"), 0);
 	if (!check_character(game))
-		return (printf("character miss"), 0);
+		return (ft_printf("character miss"), 0);
 	counts = count_elements(game);
 	if (counts.player_count != 1)
-		return (printf("player miss\n"), 0);
+		return (ft_printf("player miss\n"), 0);
 	if (counts.exit_count != 1)
-		return (printf("exit miss"), 0);
+		return (ft_printf("exit miss"), 0);
 	if (counts.collectible_count < 1)
-		return (printf("collectible miss"), 0);
+		return (ft_printf("collectible miss"), 0);
 	if (!check_path(game))
-		return (printf("path miss"), 0);
+		return (ft_printf("path miss"), 0);
 	return (1);
 }
 
@@ -82,7 +82,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("File Not Found\n");
+		ft_printf("File Not Found\n");
 		return (1);
 	}
 	if (!check_filename(argv[1]))

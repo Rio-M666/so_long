@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:35:35 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 06:38:35 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/07 10:55:45 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ void	move_player(t_game *game, int x, int y)
 	game->player_x = new_x;
 	game->player_y = new_y;
 	game->moves++;
+	ft_printf("Moves: %d\n", game->moves);
 	render_map(game);
 }
