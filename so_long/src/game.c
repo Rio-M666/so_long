@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:35:35 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 10:55:45 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:23:00 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	cleanup_game(t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 01:33:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/08 13:51:48 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:22:37 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	map_width(char **map)
 {
@@ -85,7 +85,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		ft_printf("File Not Found\n");
+		ft_printf("Error\nFile Not Found\n");
 		return (1);
 	}
 	if (!check_filename(argv[1]))

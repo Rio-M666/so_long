@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:29:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/08 13:38:47 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:23:09 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	check_filename(char *filename)
 {

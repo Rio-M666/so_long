@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:52:15 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/05 14:49:22 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:22:49 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	handle_key(int keycode, t_game *game)
 {

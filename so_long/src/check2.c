@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:37:17 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 06:13:27 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:23:04 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 t_element_count	count_elements(t_game *game)
 {

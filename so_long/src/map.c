@@ -6,11 +6,11 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:13:48 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/07 06:33:43 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/16 10:22:44 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 static char	*check_line(char *line)
 {

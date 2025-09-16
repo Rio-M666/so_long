@@ -2,7 +2,7 @@
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=42 -I.
+CFLAGS = -Wall -Wextra -Werror -D BUFFER_SIZE=42 -Iincludes.
 
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
