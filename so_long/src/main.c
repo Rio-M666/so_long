@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 01:33:21 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/16 10:22:37 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/25 18:57:24 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ int	validate_map(t_game *game)
 	if (counts.exit_count != 1)
 		return (ft_printf("Error\nMap must contai exactly one ecit (E)\n"), 0);
 	if (counts.collectible_count < 1)
-		return (ft_printf("Error\nMap must contain at least one collectible(C)\n"),
-			0);
+		return (ft_printf("Error\nMap must contain at least one\
+				collectible(C)\n"), 0);
 	if (!check_path(game))
-		return (ft_printf("Error\nNo valid path to collect all items and reach exit\n"),
-			0);
+		return (ft_printf("Error\nNo valid path to collect all items\
+				and reach exit\n"), 0);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mrio <mrio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:29:46 by mrio              #+#    #+#             */
-/*   Updated: 2025/09/16 10:23:09 by mrio             ###   ########.fr       */
+/*   Updated: 2025/09/25 18:55:13 by mrio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_filename(char *filename)
 	if (len < 4)
 		return (ft_printf("Error\nfile name isn't correct\n"), 0);
 	if (filename[len - 4] != '.' || filename[len - 3] != 'b' || filename[len
-		- 2] != 'e' || filename[len - 1] != 'r')
+			- 2] != 'e' || filename[len - 1] != 'r')
 	{
 		return (ft_printf("Error\nfile name isn't correct\n"), 0);
 	}
